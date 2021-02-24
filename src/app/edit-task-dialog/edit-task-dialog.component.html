@@ -1,0 +1,23 @@
+<div fxLayout="column">
+
+  <mat-card fxFlex class="mat-elevation-z0">
+    <mat-card-title>Edit Form</mat-card-title>
+    <mat-card-content>
+
+      <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="10px">
+        <div>
+          <mat-form-field fxFlex>
+            <mat-label>Task</mat-label>
+            <input type="text" matInput [(ngModel)]="task">
+          </mat-form-field>
+        </div>
+
+      </mat-card>
+
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="accent" [mat-dialog-close]="task">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

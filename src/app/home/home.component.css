@@ -1,0 +1,8 @@
+.task-container {
+  width: 25%;
+  margin: 20px auto 0;
+}
+
+mat-card-title {
+  font-weight: 400;
+}

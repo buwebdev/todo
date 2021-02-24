@@ -1,0 +1,43 @@
+<div fxLayout="column">
+  <div fxFlex>
+    <mat-card class="mat-elevation-z8 task-container">
+      <mat-card-title>Task Form</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="taskForm">
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label for="txtTask" id="lblTask">Task</mat-label>
+            <input type="text" matInput formControlName="task" id="txtTask" name="txtTask" />
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" (click)="addTask()" [disabled]="!taskForm.valid" fxFlex mat-raised-button color="primary">Add Task</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex>
+    <mat-card class="mat-elevation-z8 task-container">
+      <mat-card-title>Todo List</mat-card-title>
+      <mat-card-content>
+        <div fxLayout="column">
+          <mat-list *ngFor="let task of tasks">
+            <mat-list-item fxFlex>
+              {{ task.getItem() }}
+              <span fxFlex fxLayoutAlign="end start">
+                <button (click)="editTask(task.getId(), task.getItem())" mat-icon-button color="accent">
+                  <mat-icon>mode_edit</mat-icon>
+                </button>
+
+                <button (click)="deleteTask(task.getId())" mat-icon-button color="accent">
+                  <mat-icon>delete</mat-icon>
+                </button>
+
+              </span>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
